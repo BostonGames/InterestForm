@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E0BF6AE0-0A3B-0FC7-5C74-EF44D8221121}</ProjectGuid>
+    <ProjectGuid>{CBDEEB57-BB0C-2EF0-EB1F-FD77CF95242A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,11 +53,26 @@
     <UnityVersion>2019.4.34f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\FrameplaySDK\Example\Scripts\StartSession.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPanel.cs" />
     <Compile Include="Assets\Scripts\Panels\Complete.cs" />
     <Compile Include="Assets\Scripts\Panels\EnterMainInfo.cs" />
     <Compile Include="Assets\Scripts\Panels\OptionalInfoPanel.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Extended.shader" />
+    <None Include="Assets\FrameplaySDK\Plugins\Async_readback\Win64\AsyncGPUReadbackPlugin.dll" />
+    <None Include="Assets\FrameplaySDK\Plugins\Stb_image\Win32\stb_image.dll" />
+    <None Include="Assets\FrameplaySDK\Shaders\Resources\GPUMetrics\MultiBlitCompare.shader" />
+    <None Include="Assets\FrameplaySDK\DLL\FrameplaySDKEditor.dll" />
+    <None Include="Assets\FrameplaySDK\Plugins\Async_readback\Win32\AsyncGPUReadbackPlugin.dll" />
+    <None Include="Assets\FrameplaySDK\Shaders\Resources\GPUMetrics\FrameplayImageComparison.cginc" />
+    <None Include="Assets\FrameplaySDK\Shaders\HighQualityAd.shader" />
+    <None Include="Assets\FrameplaySDK\Shaders\Resources\GPUMetrics\AverageCoverage.shader" />
+    <None Include="Assets\FrameplaySDK\Shaders\Resources\BlitRectangle.shader" />
+    <None Include="Assets\FrameplaySDK\DLL\FrameplaySDK.dll" />
+    <None Include="Assets\FrameplaySDK\Plugins\Stb_image\Win64\stb_image.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -242,6 +257,12 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>A:\UnityInstalls\2019.4.34f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="FrameplaySDK">
+      <HintPath>Assets\FrameplaySDK\DLL\FrameplaySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="FrameplaySDKEditor">
+      <HintPath>Assets\FrameplaySDK\DLL\FrameplaySDKEditor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>A:\UnityInstalls\2019.4.34f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -620,6 +641,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{D605A9A9-7C0D-1128-D7E7-DADEB68D2457}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{7C1A7554-9BA6-586E-4E9D-BC534633C429}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{121E6F46-E3E5-A857-3EF1-AE07CCF6043A}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FrameplaySDK.Public.csproj">
+      <Project>{60F6D107-9630-F344-C791-745C0A4151F9}</Project>
+      <Name>FrameplaySDK.Public</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
