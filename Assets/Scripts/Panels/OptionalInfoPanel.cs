@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class OptionalInfoPanel : MonoBehaviour, IPanel
 {
-    public InputField companyName, companyTitle;
-    public Toggle rPG, shooter, adventure, puzzle, racing, mystery, mmo, sandbox; 
+    public InputField companyNameInput, companyTitleInput;
     
     public void ProcessInfo()
     {
+    }
+
+    public void TransferOptionalData()
+    {
+        UIManager.Instance.activeUserProfile.companyName = companyNameInput.text;
+        UIManager.Instance.activeUserProfile.companyTitle = companyTitleInput.text;
     }
 }
